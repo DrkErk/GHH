@@ -1,0 +1,30 @@
+Data Types:
+		INT: signed integer values: typical sizes by machines (64 bit- 8 bytes, 32 bit- 4 byte, 16 bit- 2 bytes)
+		FLOAT: signed floating point (4 bytes)
+		DOUBLE: Large floating point number (8 bytes)
+		CHAR: single character (1 byte)
+
+Printf Format Types:
+		%n :print nothing: printf("test %n")
+		%d :Decimal value: printf("test %d", 123)
+		%s :String value: printf("test %s", "123")
+		%x :Hex value: printf("test %x", 0x123)
+		%f :Float value: printf("test %f", 1.308)
+
+scanf - scanf(<format string>, <list of variable/values>);
+	ex: scanf("%d", &number);
+	(&) means we are storing the value in the memory location pointed by a number. (Pointers section)
+
+strcpy/strncpy
+	-strcpy(<destination>, <source>);
+	-Doesnt check source size
+	-strncpy(<destination>, <source>, <width>);
+	-allows for size control and to handle errors
+
+
+
+
+
+
+
+
