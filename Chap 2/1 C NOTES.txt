@@ -21,6 +21,24 @@ strcpy/strncpy
 	-strncpy(<destination>, <source>, <width>);
 	-allows for size control and to handle errors
 
+COMPILING the CODE - GNU C COMPILER(gcc)
+-compiling is the process of makign human readable code into machine Binary Files.
+-These files are nearly ready to execute but may contain unresolved references to symbols and functions not included in the original source code files. These symbols and reference are resolved through a process called LINKING, as each object file are linked together in an executable binary file. 
+
+	GCC commands
+	-o <filename>: saved compiled binary with this name. The default is to save output as a.out
+	-S           : produces a file containing assembly instructions; saved with an .s extension.
+	-ggdb        : makes extra debugging information when using the GNU debugger (gdb)
+	-c           : compiles w/o linking/ produces object files with and .o extension
+	-mpreferred-stack-boundary=2   : compiles the program using a dword size stack, simplifying the debugging process while you learn
+	-fno-stack-protector  : disables stack protection; introduced in GCC 4.1 (helps with buffer overflows)
+	-z execstack : enables executable stack. (helps with buffer overflows)
+
+
+Computer Memory
+
+
+
 
 
 
