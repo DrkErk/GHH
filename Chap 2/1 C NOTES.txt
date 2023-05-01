@@ -36,6 +36,96 @@ COMPILING the CODE - GNU C COMPILER(gcc)
 
 
 Computer Memory
+	-Bit: represented as 0 or 1 in memory
+	-Nibble: 4 bits, from 0000 to -1111 which is 0 to 15 in decimal
+	-Byte: 2 Nibbles or 8 bits, (0000) (0000) which would be a range from 0 to 255 in decimal
+	-Word: 2 Bytes together or 16 bits, (0000 0000) (0000 0000) which is 0 to 65,535 in decimal
+	-Double Word: 2 Words together or 32 bits, (0000 0000 0000 0000) (0000 0000 0000 0000) which is 0 to in (2^32 - 1) decimal
+	-Quad Word: 2 Double Words together or 64 bits,(0000 0000 0000 0000 0000 0000 0000 0000) (0000 0000 0000 0000 0000 0000 0000 0000) which is 0 to (2^64 - 1) in decimal
+
+Endian methods
+	-Little Endian: Low Order bits written first
+	-Big Endian: High Order bits written first 
+
+Programs in memory:
+	-When proccesses are loaded into memory, they are broken into many small sections. With the 6 main small sections being (.text, .data, .bss, heap, stack, enviroment/args)
+		
+		.text Section: (code segment) (corresponds to the .text portion of binary executable file)
+			-This section is marked as READABLE and EXECUTABLE and will cause an access violation if write attempt is made. (the size is fixed at runtime when proccess is first loaded)
+
+		.data Section: is used to store global initialized variables such as "int a = 0;"
+			-The size of the section is fixed at runtime. should only be marked as readable
+
+		.bss Section: (below stack section) used to store certian types of global uninstialized variables such as "int a;"
+			-The size of the section is fixed at runtime. This segment needs to be readabe and writable but not executable
+
+		Heap Section: (used to store dynamically allocated variables and grow from lower addressed to higher addressed memory.)
+			-The allocation of memory is controlled, malloc(), realloc(), and free() functions. In order to declare an int and have the memory allocated at runtime:
+			-EX: int i = malloc (sizeof (int)); // Dynamically allocates an integer, contains the preexisting value of that memory
+			-The section should be readable and writable but should not be executable because an attacker who gains control of a process could easily perform shellcode
+			-- execution in regions such as stack and heap
+
+		Stack Section:
+			-used to keep track of functions calls (recursively) and grows from the higher-addressed memory to the lower-addressed memory on most systems. If the process is
+			-- thread gets its own unique stack. As you will see, the fact that the stack grows from higher toward lower memory allows the subject of buffer overflows to exist
+			-Local variables exist in the stack section.
+
+		Enviroment/ Argument Section:
+			-This section is used to store a copy of a system-level variables that may be required by the process during runtime. (for example among other things, the path, 
+			-- shell name, hostname, are made available to the running process).
+			-This section is writable, allowing its use in format string and buffer overflow. (additionally, cli args are stored here)
+			-looks like:
+				(LOWER ADDRESSES) |.text|.data|.bss|heap} Unused {Stack|Env| (HIGHER ADDRESSES)
+
+
+Buffer:
+	-The buffer is a fixed length. May hold any predefined type of data.
+
+Strings in memory:
+	-String is terminated or ended by a null character (\0 in C). (\0 is an example of an escape sequence which is a used to specify a special operation) like newline or carriage return
+	-- (\n or \r) 
+
+Pointers:
+	-Special pieces of memory that hold other pieces of memory. (Moving data around inside of memory is relatively slow operation.)
+	-It is easier to keep track of data in memory and change the pointers
+	*- Pointers are 4-8 BYTES of contiguous memory, depending on whether the application is 32 bit or 64 bit. 
+	
+	-EX: char * str; //This is read. Give me 4- 8 bytes called str which is a pointer to a character variable (The first byte of the array)
+	-THE data from above is considered unintialized and will go into the .bss section
+
+	-EX2: int * point1; //this is read, give me 4 - 8 bytes called point1, which is a pointer to an integer variable
+	
+	-To read the value of the memory address pointed to by the pointer, you dereference the pointer with the * symbol.
+	-To point the value of the integer pointed to by point1 the preceding code would be used:
+		printf("%d", *point1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
