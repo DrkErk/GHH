@@ -1,0 +1,38 @@
+Registers:
+Catagory        64 BIT           32 BIT              16bit/8bit                    purpose
+
+General      RAX,RBX,RCX        EAX,EBX             AX,BX,CX,DX (16BIT)       manipulate data
+Registers    RDX, R8-R15        ECX,EDX        AH,BH,CH,DH,AL,BL,CL,DL (8BIT)
+
+
+Segment                                                CS,SS,DS               16bit. used to hold the first part of a memory address, 
+Registers                                              ES,FS,GS               as well as pointers, code, stack, and xtra data segments.
+
+
+Offset           RBP               EBP                                           (RBP: 64bit use of the base pointer depends on frame pointer omission, language support, usage of r8-r15 
+Registers                                                                        registers) Points to the bottom of the stack frame, beg of the local enviroment on the stack for a func
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
