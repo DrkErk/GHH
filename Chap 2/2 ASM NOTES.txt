@@ -9,8 +9,91 @@ Segment                                                CS,SS,DS               16
 Registers                                              ES,FS,GS               as well as pointers, code, stack, and xtra data segments.
 
 
-Offset           RBP               EBP                                           (RBP: 64bit use of the base pointer depends on frame pointer omission, language support, usage of r8-r15 
-Registers                                                                        registers) Points to the bottom of the stack frame, beg of the local enviroment on the stack for a func
+Offset           RBP               EBP                                        (RBP: 64bit use of the base pointer depends on frame pointer omission, language support, usage of r8-r15 
+Registers                                                                     registers) Points to the bottom of the stack frame, beg of the local enviroment on the stack for a func
+
+
+                 RSI               ESI                                        Used to hold data source offset in an operation using a memory block    
+           (source index)
+
+                RDI                EDI                                        Used to hold the destination data offset in an operation using a memory block
+         (destination index)
+
+                RSP               ESP                                         Used to point to the top of the stack
+           (Stack pointer)                                       
+
+Special
+Registers                                                                     Only used by CPU
+
+             RFLAGS             EFLAGS                                        Cpu uses to track results of logic and the state of the proccessor. Key Flags to know are:
+                                                                              ZF: Zero Flag, IF: Interrupt enable flag, and SF: Sign Flag
+
+
+              RIP                EIP                                          Used to point to the address of the next intruction to be executed
+       (Instruction Pointer)
+
+
+
+Different asm:
+	-AT&t syntax used GNU asm (GAS) contained in the (GCC) compiler suite. AT&T: "CMD <source>, <dest> <#comment>"
+		-% before registers (means indirect operand)
+		-$ before literal values (means immediate operand)
+		-handles memory references differently than NASM
+
+	-Intel Syntax uses NASM (Netwide assemblier). NASM/ intel: "CMD <dest>, <source> <;comment>"
+
+
+ASM commands:
+	mov:    nasm: mov eax, 51h            AT&T:  movl $51, %eax
+	add/ sub
+	push/ pop
+	xor
+	jne, je, jz,jnz, jmp
+	call/ ret
+	inc/ dec
+	lea (load effective address)
+
+
+Addressing Mode          Description                                         		NASM EX:
+
+Register                Registers hold the data to be manipulated. no          		mov rbx, rdx
+                        memory interaction. both regs must be the same size		add al, ch
+
+Immediate		the source operand is a numerical value. Decimal is 		mov eax, 1234h
+			assumed, use h for hex						mov dx, 301
+
+Direct			the first operand is the address of memory to manipulate.	mov bh, 100
+			Its marked with brackets					mov[4321h], bh
+
+Register		The first operand is a register in brackets that holds		mov[di], ecx
+indirect		the address to be manipulated
+
+
+Based			The effective address to be manipulated is calculated by	mov edx, 20[edx]
+relative		using EBX or EBP plus an offset value				
+
+
+Indexed			Same as based relative, but edi and esi are used to hold	mov ecx, 20[esi]
+relative		the offset							
+
+
+Based Indexed		the effective address is found by combining Based Relative	mov ax,[bx][si]+1
+relative		and Indexed Relative modes.					
+
+
+
+
+
+
+Assembly File Structure
+	-.model:
+		-the .model directive indicates size of the .data and .text sections
+	-.stack:
+		-the .stack directives marks the beginning of the stack section and indicates the size of the stack in bytes
+	-.data:
+		-the .data directive marks the beginning of the .data section and defines the variables, both initialized and uninitialized
+	-.text:
+		-The .text directive holds the programs commands
 
 
 
@@ -19,8 +102,21 @@ Registers                                                                       
 
 
 
-
-
+Command             	Description
+-b<function>		:Sets a breakpoint at <function>
+-b *mem 		:Sets a breakpoint at the absolute memory location
+-info b			:display info about the breakpoints
+-delete b		:removes breakpoint
+-run <args>		:starts debugging the program from within gdb using the given args
+-info reg		:display information about the curent register state
+-stepi or si		:executes one machine instruction
+-next or n		:executes one function 
+-bt			:backtrace command; shows the names of stack frames
+-up/down		:moves up and down the stack frames
+-print var		:prints the value of the variable and prints the value of the register, respectively
+ print /x $<reg>	
+-x /NTA			:examines memory, where n= numbers of units to display, T = type of data to display(x:hex,d:dec,c:char,s:string,i:instruction); A= absolute address/ symbolic name 			 like main
+-quit			:exits gdb
 
 
 
