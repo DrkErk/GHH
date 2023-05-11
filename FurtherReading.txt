@@ -1,0 +1,9 @@
+CHAP 2:
+Style guide for python: www.python.org/dev/peps/pep-0008/
+Example of c program without main: stackoverflow.com/questions/42328165/compile-and-run-program-without-main-in-c
+Using GNU C compiler (GCC): gcc.gnu.org/onlinedocs/gcc-3.2/gcc/Invoking-GCC.html
+
+pg 53
+
+
+CHAP 3:
