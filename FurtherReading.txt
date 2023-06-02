@@ -1,9 +1,97 @@
 CHAP 2:
-Style guide for python: www.python.org/dev/peps/pep-0008/
-Example of c program without main: stackoverflow.com/questions/42328165/compile-and-run-program-without-main-in-c
-Using GNU C compiler (GCC): gcc.gnu.org/onlinedocs/gcc-3.2/gcc/Invoking-GCC.html
+-Style guide for python:
+	www.python.org/dev/peps/pep-0008/
+-Example of c program without main: 
+	stackoverflow.com/questions/42328165/compile-and-run-program-without-main-in-c
+-Using GNU C compiler (GCC): 
+	gcc.gnu.org/onlinedocs/gcc-3.2/gcc/Invoking-GCC.html
+-Kali and python 3:
+	www.kali.org/docs/general-use/python3-transition
+-"A CPU History." PC mech. 3/23/01 (nik):
+	www.pcmech.com/article/a-cpu-history
+-Art of Assembly Language Programming and HLA (Randall Hyde):
+	www.randallhyde.com
+-ddd debugger frontend:
+	www.gnu.org/software/ddd
+-debugging with NASM and gdb:
+	www.csee.umbc.edu/help/nasm/nasm.shtml
+-edb debugger:
+	github.com/eteran/edb-debugger
+-"Endianness," Wikipedia: 
+	en.wikipedia.org/wiki/Endianness
+-Good Python tutorial:
+	docs.python.org/3/tutorial
+-"How C Programming Works" How Stuff Works (Marshall Brain)
+	computer.howstuffworks.com/c.htm
+-"byte and bit order dissection," linux journal, sept 2 2003, Kevin Kaichun He
+	www.linuxjournal.com/article/6788
+-notes on x86 assembly 1997 (phil bowman)
+	www.ccntech.com/code/x86asm.txt
+-64 bit tutorial, Sonictk
+	sonictk.github.com/asm_tutorial
+-"Programming Methodology in C"(Hugh Anderson) 
+	www.comp.nus.edu.sg/~hugh/TeachingStuff/cs1101c.pdf
+-"Smashing the Stack for fun and profit" (Aleph One)
+	www.phrack.org/issues.html?issue=49&id=14#article
+- x86 registers
+	www.eecg.toronto.edu/~amza/www.mindsec.com/files/x86regs.html
+-x64 architecture
+	docs.microsoft.com/en-us/windows-hardware/drivers/debugger/x64-architecture
 
-pg 53
+
 
 
 CHAP 3:
+Further Reading:
+
+-ELF specification
+	refspecs.linuxbase.org/elf/elf.pdf
+-Extending GDB using Python
+	sourceware.org/gdb/current/onlinedocs/gdb/Python.html
+-Pwntools
+	docs.pwntools.com
+
+References:
+
+-Dmitry Levin Modern Strace:
+	https://events19.linuxfoundation.org/wp-content/uploads/2017/12/Modern-Strace-Dmitry-Levin-BaseALT.pdf
+
+-checksec:
+	https://github.com/slimm609/checksec.sh.
+-libc-database:
+	https://github.com/niklasb/libc-database
+-libc-database web wrapper:
+	https://libc.blukat.me
+-patchelf:
+	https://github.com/NixOs/patchelf
+-one_gadget:
+	https://github.com/david942j/one_gadget
+-capstone disassembler:
+	www.capstone-engine.org
+-ropper:
+	https:github.com/sashs/Ropper
+-GEF:
+	https://gef.readthedocs.io/en/master
+-Pwndbg:
+	https://github.com/pwndbg/pwndbg
+-PEDA:
+	https://github.com/longld/peda
+-Heap Made Easy (HeapME):
+	https://heapme.f2tc.com/
+-HeapME GEF fork:
+	https://github.com/htejeda/gef
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
