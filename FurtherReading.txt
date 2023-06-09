@@ -83,8 +83,24 @@ References:
 
 
 
+Chap 4:
+Further Reading:
+-Ghidra's Embedded Help:
+	Press f1 or click help on any menu item or dialog
+-Ghidra Wiki:
+	ghidra-sre.org/CheatSheet.html
+-Recon MTL 2019 (by ghidracadabra and emteere) 
+	github.com/NationalSecurityAgency/ghidra/wiki/files/recon2019.pdf
+-Black hat USA 2019 (by Knighton and Chris Delikat)
+	github.com/NationalSecurityAgency/ghidra/wiki/files/blackhat2019.pdf
 
-
+References:
+-BinDiffHelper
+	https://github.com/ubfx/BinDiffHelper
+-BinExport
+	https://github.com/google/binexport
+-zynamics BinDiff
+	https://www.zynamics.com/bindiff.html
 
 
 

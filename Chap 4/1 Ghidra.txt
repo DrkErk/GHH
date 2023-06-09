@@ -1,0 +1,36 @@
+***STARTING OUT***
+- using the example student.c and student-patched.c
+- then do:
+	gcc students.c -o students
+	gcc students-patched.c -o students-patched
+- these will will be the files analyzed in ghidra
+
+
+
+***INSTALLATION TIME***
+-Java 11 runtime dependency for ghidra in default kali
+	sudo apt-get update && sudo apt-get install -y openjdk-11-jdk
+-Ghidra v9.2.3 package from website (https://ghidra-sre.org)
+	unzip ghidra_9.2.3_PUBLIC_20210325.zip -d ~
+-enter the resulting directory and run:
+	cd ~/ghidra_9.2.3_PUBLIC && ./ghidraRun
+
+
+
+
+***GO OVER AND do the examples for this. This is page 71 and 88***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
